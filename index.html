@@ -213,7 +213,6 @@ $(document).ready(function () {
     order.addEventListener("click", function () {
         $("#error").text('');
         var name = $("#user_name").val();
-        var email = $("#user_email").val();
         var phone = $("#user_phone").val();
         var koment = $("#user_koment").val();
 
@@ -226,14 +225,17 @@ $(document).ready(function () {
                     Кофе: value.name,
                     Цена: value.price,
                     Объём: value.selectedVolume,
-                    Количество: value.quantity
+                    Количество: value.quantity,
+					Сахар: value.sugar,
+					Добавки: value.toppings.join(', '),
+					Молоко: value.milk,
+					Сиропы: value.syrups.join(', ')
                 });
             }
         });
 
         var data = {
             name: name,
-            email: email,
             phone: phone,
             koment: koment,
             items: cartData,
