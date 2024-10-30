@@ -1,0 +1,150 @@
+/* Стиль для корзины */
+.card {
+    position: fixed;
+    top: 0;
+    right: -500px; /* По умолчанию скрываем корзину справа */
+    width: 500px;
+    background-color: #453E3B;
+    height: 100vh;
+    transition: right 0.5s ease; /* Плавное выдвижение */
+    z-index: 101; /* Корзина под шапкой */
+    display: flex;
+    flex-direction: column; /* Используем flex для размещения элементов */
+}
+
+/* Перемещение корзины при активном состоянии */
+.active .card {
+    right: 0; /* Выдвигаем корзину вправо */
+}
+
+/* Перемещение контейнера при открытой корзине */
+.active .container {
+    transform: translateX(-200px); /* Смещаем основной контейнер */
+    transition: transform 0.5s ease; /* Плавное смещение */
+}
+
+/* Заголовок корзины */
+.card h1 {
+    color: #E8BC0E;
+    font-weight: 100;
+    padding-top: 10px; /* Уменьшено значение padding */
+	padding-right: 20px;
+	padding-left:20px;
+    display: flex;
+    align-items: center;
+    flex-shrink: 0; /* Чтобы заголовок не сжимался */
+    margin: 0; /* Убираем отступы по умолчанию */
+}
+
+/* Список товаров в корзине */
+.listCard {
+    overflow-y: auto; /* Добавляем скролл для списка товаров */
+    max-height: calc(100vh - 150px); /* Ограничиваем высоту списка (100vh минус заголовок и кнопки) */
+    padding: 0 10px; /* Убираем верхний отступ */
+    flex-grow: 1; /* Чтобы список товаров занимал оставшееся пространство */
+}
+
+/* Элементы списка товаров */
+.listCard li {
+    display: grid;
+    grid-template-columns: 100px 1fr; /* Сетка: колонка для изображения и правая колонка */
+    grid-template-rows: auto auto; /* Ряды: заголовок и изображение, кнопки */
+    color: #fff;
+    row-gap: 10px;
+    padding: 10px 0; /* Отступы вокруг товара */
+    border-bottom: 1px solid #555;
+}
+
+/* Заголовок товара */
+.item-details h2 {
+    grid-column: 1 / -1; /* Заголовок на всю ширину */
+    font-size: 18px;
+    color: white;
+    margin: 0; /* Убираем отступы по умолчанию */
+    margin-bottom: 10px; /* Добавляем отступ снизу для расстояния до картинки */
+}
+
+/* Изображение товара */
+.item-details .picture {
+    width: 100%;
+    max-height: 80px; /* Ограничение высоты изображения */
+    object-fit: cover; /* Подгонка изображения под размер с обрезкой */
+}
+
+/* Кнопки под изображением */
+.item-details .buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    grid-column: 1 / -1; /* Кнопки на всю ширину */
+}
+
+/* Информация о товаре справа */
+.details {
+    grid-column: 2; /* Остальные детали справа от изображения */
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    padding-left: 10px;
+    margin-top: 30px; /* Добавляем отступ сверху для опускания блока ниже */
+}
+
+/* Цена и объем на одном уровне */
+.price-volume {
+    display: flex; /* Используем flex для выравнивания */
+    align-items: center; /* Вертикальное центрирование */
+    padding-left: 0; /* Убираем отступ слева */
+}
+
+/* Разделитель между ценой и объемом */
+.price-volume span {
+    margin-right: 20px; /* Отступ между ценой и объемом */
+}
+
+/* Стили для добавок */
+.add-ons span {
+    color: gray;
+    display: block; /* Каждый элемент добавок на новой строке */
+}
+
+/* Количество товара в корзине */
+.listCard .count {
+    margin: 0 10px;
+    text-align: center;
+	margin-top: 10px; /* Добавляем отступ сверху для опускания блока ниже */
+}
+
+/* Кнопка для изменения количества товара */
+.listCard li button {
+    background-color: #fff5;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    color: #fff;
+	margin-top: 10px; /* Добавляем отступ сверху для опускания блока ниже */
+}
+
+/* Блок оформления заказа внизу корзины */
+.card .checkOut {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    flex-shrink: 0; /* Не позволяйте кнопкам сжиматься */
+}
+
+.card .checkOut div {
+    background-color: #E8BC0E;
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.card .checkOut div:nth-child(2) {
+    background-color: #1C1F25;
+    color: #fff;
+}

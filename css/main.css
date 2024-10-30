@@ -1,0 +1,269 @@
+/* Основной стиль сайта */
+body {
+    background-color: #E3E7E8;
+    font-family: system-ui;
+    font-size: 16px;
+	margin: 0; /* Убираем отступ сверху */
+}
+
+/* Основной контейнер для макета */
+.container {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    transition: 0.5s;
+	padding-top: 120px; /* Дополнительный отступ, если нужно для визуального разделения */
+}
+
+/* Шапка сайта */
+header {
+    background-color: rgba(0, 0, 0, 0.8); 
+    color: white;
+    position: fixed; 
+    top: 0; 
+    left: 0;
+    width: 100%; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px; 
+    box-sizing: border-box;
+}
+
+/* Псевдоэлементы для создания боков шапки */
+header::before, header::after {
+    content: '';
+    position: fixed;
+    top: 0;
+    height: 105px; /* Высота шапки */
+    width: 500px; /* Ширина боков, которая перекрывает корзину */
+    background-color: rgba(0, 0, 0, 0.8); /* Такой же цвет, как у шапки */
+    z-index: 104; /* Чуть ниже шапки, но поверх корзины */
+}
+
+header::before {
+    left: -500px; /* Левая полоса */
+}
+
+header::after {
+    right: -500px; /* Правая полоса */
+}
+
+/* Эффект увеличения картинки при наведении */
+.picture {
+    transition: 1s;
+}
+
+.picture:hover {
+    transform: scale(1.1);
+}
+
+/* Стиль для текста коричневого цвета */
+.colortext {
+    color: #964b00;
+}
+
+/* Заголовок в шапке */
+header h1 {
+    margin-right: auto;
+}
+
+/* Навигация в шапке */
+.nav {
+    margin-left: 20px;
+}
+
+/* Блок корзины в шапке */
+header .shopping {
+    position: relative;
+    text-align: center;
+    display: flex;
+    align-items: center;
+	margin-bottom: 20px;
+	color: white;
+}
+
+/* Изображение корзины */
+header .shopping img {
+    width: 40px;
+    margin-right: 10px;
+}
+
+/* Информация рядом с корзиной */
+header .shopping .shopping-info {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+header .shopping p {
+    margin: 0;
+    display: inline-block;
+}
+
+/* Счётчик товаров в корзине */
+header .shopping span {
+    background: red;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: -5px;
+    right: -8px;
+    padding: 1px 6px;
+}
+
+/* Стили для списка товаров */
+select {
+    width: 100%;
+    outline: none;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Список кофе и чая */
+.coffee-list, .tea-list, .necoffee-list, .avtorskoe-list, .cocktails-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+    justify-content: space-between;
+}
+
+/* Описание каждого товара */
+.coffee-list .item, .tea-list .item, .necoffee-list .item, .avtorskoe-list .item, .cocktails-list .item {
+    width: calc(33.33% - 20px);
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #DCE0E1;
+    padding: 20px;
+    box-shadow: 0 10px 10px #757676;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+/* Изображение товара */
+.coffee-list .item img, .tea-list .item img, .necoffee-list .item img, .avtorskoe-list .item img, .cocktails-list .item img {
+    width: 100%;
+	height: auto;
+    max-height: 250px;
+    object-fit: cover;
+}
+
+/* Заголовок товара */
+.coffee-list .item .title, .tea-list .item .title, .necoffee-list .item .title, .avtorskoe-list .item .title, .cocktails-list .item .title {
+    font-weight: 600;
+}
+
+/* Цена товара */
+.coffee-list .item .price, .tea-list .item .price, .necoffee-list .item .price, .avtorskoe-list .item .price, .cocktails-list .item .price {
+    margin: 10px;
+}
+
+/* Кнопка для добавления товара в корзину */
+.coffee-list .item .dobavit, .tea-list .item .dobavit, .necoffee-list .item .dobavit, .avtorskoe-list .item .dobavit, .cocktails-list .item .dobavit {
+    background-color: #1C1F25;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.coffee-list .item .dobavit:hover, .tea-list .item .dobavit:hover, .necoffee-list .item .dobavit:hover, .avtorskoe-list .item .dobavit:hover, .cocktails-list .item .dobavit:hover {
+    background-color: #E8BC0E;
+}
+
+@media (max-width: 768px) {
+    body {
+        font-size: 18px;
+    }
+
+    header .h1 {
+        margin-left: 20px;
+    }
+	
+	h2 {
+        padding-left: 30px;
+    }
+	
+	p {
+        margin-left: 20px;
+    }
+
+    header .shopping img {
+        width: 40px;
+        margin-right: 20px;
+    }
+
+    header .shopping span {
+        background: red;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        padding: 3px 8px;
+        margin-right: 10px;
+    }
+
+    header .shopping p {
+        margin: 0;
+        display: inline-block;
+        margin-left: -20px;
+    }
+
+    .list {
+        gap: 0;
+        margin-top: 10px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 0 10px; /* Отступы по бокам для списка товаров */
+    }
+
+    /* Карточки товаров по две на строку с отступами от краёв экрана */
+    .coffee-list .item, .tea-list .item, .necoffee-list .item, .avtorskoe-list .item, .cocktails-list .item {
+        width: calc(50% - 20px); /* Две карточки на строку с учетом отступов */
+        margin: 5px; /* Отступы между карточками */
+        box-sizing: border-box;
+    }
+
+    .list .item .price {
+        margin: 10px;
+        flex-grow: 1;
+    }
+	
+	.hide-header {
+        top: -100px;
+    }
+	
+	.card {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        background-color: #453E3B;
+        height: 100vh;
+        transition: 0.5s;
+        overflow-y: auto;
+        z-index: 101;
+        box-sizing: border-box;
+    }
+
+    .active .card {
+        left: 0;
+        width: 100vw;
+    }
+
+    .active .container {
+        transform: none !important;
+    }
+}

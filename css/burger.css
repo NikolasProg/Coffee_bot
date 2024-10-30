@@ -1,0 +1,145 @@
+/* Стиль для всплывающего окна с описанием товара */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Остается на месте */
+    z-index: 1; /* На переднем плане */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Прокрутка при необходимости */
+    background-color: rgb(0,0,0); /* Черный фон */
+    background-color: rgba(0,0,0,0.4); /* Полупрозрачный фон */
+}
+
+.modal-content {
+    background-color: #fefefe; /* Фон содержимого */
+    margin: 6.5% auto; /* 7% от верхней и 7% от нижней части */
+    padding: 20px; /* Отступы внутри содержимого */
+    border: 1px solid #888; /* Граница */
+    width: 80%; /* Ширина содержимого */
+}
+
+.close {
+    color: #aaa; /* Цвет кнопки закрытия */
+    float: right; /* Выравнивание вправо */
+    font-size: 28px; /* Размер кнопки закрытия */
+    font-weight: bold; /* Жирный кнопка закрытия */
+}
+
+.close:hover,
+.close:focus {
+    color: black; /* Цвет при наведении */
+    text-decoration: none; /* Без подчеркивания */
+    cursor: pointer; /* Указатель при наведении */
+}
+
+/* Стиль для бургер-меню */
+.open {
+    display: flex !important;
+}
+
+.burger {
+	margin-right: 20px;
+    display: flex;
+    position: relative;
+    z-index: 50;
+    align-items: center;
+    justify-content: flex-end;
+    width: 30px;
+    height: 18px;
+}
+
+/* Линии бургер-меню */
+.burger span {
+    height: 2px;
+    width: 80%;
+    transform: scale(1);
+    background-color: white;
+}
+
+/* Верхняя и нижняя линии бургер-меню */
+.burger::before, .burger::after {
+    content: '';
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    transition: all 0.3s ease 0s;
+}
+
+.burger::before {
+    top: 0;
+}
+
+.burger::after {
+    bottom: 0;
+}
+
+/* Анимация бургер-меню при активном состоянии */
+.burger.active span {
+    transform: scale(0);
+}
+
+.burger.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0, -50%);
+}
+
+.burger.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0, 50%);
+}
+
+/* Навигационное меню, открывающееся с бургер-меню */
+.nav {
+    display: none;
+    flex-direction: column;
+    position: fixed;
+    top: 100px; /* Отступ сверху */
+    right: 10px; /* Отступ справа */
+    height: auto; /* Высота по содержимому */
+    width: 200px; /* Ширина */
+    z-index: 50;
+    background-color: #E3E7E8;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Тень для эффекта плавающего окна */
+    padding: 20px;
+    border-radius: 8px;
+    animation: burgerAnimation 0.4s;
+}
+
+/* Список элементов навигации */
+.nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px; /* Расстояние между пунктами меню */
+}
+
+.nav ul li {
+    text-align: center;
+}
+
+/* Ссылки навигации */
+.nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.nav ul li a:hover {
+    color: #E8BC0E; /* Цвет при наведении */
+}
+
+/* Анимация появления бургер-меню */
+@keyframes burgerAnimation {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}

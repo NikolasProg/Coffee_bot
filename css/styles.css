@@ -1,0 +1,289 @@
+
+/* Контейнер */
+.container2 {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #DCE0E1; /* Цвет фона контейнера */
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 450px;
+    width: 100%;
+    z-index: 11; /* Выше размытого фона */
+    display: none; /* По умолчанию скрыто */
+}
+
+/* Заголовки */
+.container2: h1, h2 {
+    color: #1C1F25; /* Коричневый цвет заголовков */
+    margin-bottom: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+/* Секции */
+.section {
+    margin-bottom: 25px;
+}
+
+/* Стили для селекторов и ползунков */
+select, input[type="range"] {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    background-color: #f9f9f9; /* Светлый фон для полей */
+    transition: border-color 0.3s ease;
+}
+
+select:hover, input[type="range"]:hover {
+    border-color: #964b00; /* Коричневый цвет при наведении */
+}
+
+/* Стили для контейнера чекбоксов */
+.checkbox-container {
+    display: flex;
+    flex-direction: column; /* Расположить элементы вертикально */
+    align-items: flex-start; /* Выравнивание по левому краю */
+    justify-content: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    transition: border-color 0.3s ease;
+    margin-bottom: 10px;
+}
+
+.checkbox-container label {
+    display: flex;
+    align-items: center; /* Вертикальное выравнивание чекбокса и текста */
+    margin-bottom: 10px; /* Отступ между чекбоксами */
+}
+
+input[type="checkbox"] {
+    margin-right: 10px; /* Отступ между чекбоксом и текстом */
+    width: 20px;
+    height: 20px;
+    accent-color: #964b00; /* Коричневый цвет для чекбокса */
+}
+
+.checkbox-container:hover {
+    border-color: #964b00; /* Коричневый цвет при наведении */
+}
+
+details {
+    margin-bottom: 10px;
+}
+
+summary {
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Стили кнопок */
+.extra-btn {
+    background-color: gray; /* Темный цвет кнопки */
+    color: white;
+    padding: 6px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    display: block;
+    margin-left: auto;
+	margin-bottom: 10px;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+    font-size: 16px;
+}
+
+.extra-btn:hover {
+    background-color: #E8BC0E; /* Яркий цвет при наведении */
+}
+
+#result {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Дополнительные стили для карточек товаров и выпадающего меню */
+.product-card {
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    margin: 20px 0;
+    position: relative;
+}
+
+.product-card h3 {
+    margin: 0;
+    color: #333;
+}
+
+.product-card p {
+    color: #777;
+    font-size: 14px;
+    margin: 10px 0;
+}
+
+.product-card button {
+    background-color: #1C1F25;
+    color: #fff;
+    width: 100%;
+    padding: 10px;
+    transition: background-color 0.3s;
+}
+
+.product-card button:hover {
+    background-color: #E8BC0E; /* Цвет кнопки товара при наведении */
+}
+
+/* Выпадающее меню */
+.additional-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 10;
+    width: 100%;
+}
+
+.product-card:hover .additional-menu {
+    display: block;
+}
+
+/* Стили для скроллера */
+::-webkit-scrollbar {
+    width: 12px; /* Ширина скроллера */
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Цвет фона трека */
+    border-radius: 10px; /* Скругление углов трека */
+}
+
+::-webkit-scrollbar-thumb {
+    background: #964b00; /* Коричневый цвет для ползунка */
+    border-radius: 10px; /* Скругление углов ползунка */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #7a3e00; /* Темнее коричневый цвет при наведении */
+}
+
+.syrup-scroll-container {
+    max-height: 150px; /* Максимальная высота для прокрутки */
+    overflow-y: auto; /* Включает вертикальную прокрутку */
+    border: 1px solid #ccc; /* Рамка контейнера */
+    border-radius: 5px; /* Закругление углов */
+    padding: 10px; /* Отступы внутри контейнера */
+    background-color: #f9f9f9; /* Цвет фона */
+}
+
+.toppings-scroll-container {
+    max-height: 150px; /* Высота для отображения ровно 3 добавок */
+    overflow-y: auto; /* Включает вертикальную прокрутку */
+    border: 1px solid #ccc; /* Рамка контейнера */
+    border-radius: 5px; /* Закругление углов */
+    padding: 10px; /* Отступы внутри контейнера */
+    background-color: #f9f9f9; /* Цвет фона */
+}
+
+.checkbox-container {
+    display: flex;
+    flex-direction: column; /* Расположение элементов вертикально */
+    align-items: flex-start; /* Выравнивание по левому краю */
+}
+
+/* Стили для скроллера */
+.toppings-scroll-container::-webkit-scrollbar,
+.syrup-scroll-container::-webkit-scrollbar {
+    width: 12px; /* Ширина скроллера */
+}
+
+.toppings-scroll-container::-webkit-scrollbar-track,
+.syrup-scroll-container::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Цвет фона трека */
+    border-radius: 10px; /* Скругление углов трека */
+}
+
+.toppings-scroll-container::-webkit-scrollbar-thumb,
+.syrup-scroll-container::-webkit-scrollbar-thumb {
+    background: #964b00; /* Коричневый цвет для ползунка */
+    border-radius: 10px; /* Скругление углов ползунка */
+}
+
+.toppings-scroll-container::-webkit-scrollbar-thumb:hover,
+.syrup-scroll-container::-webkit-scrollbar-thumb:hover {
+    background: #7a3e00; /* Темнее коричневый цвет при наведении */
+}
+		
+/* Стили для ползунка сахара */
+#sugarRange {
+    -webkit-appearance: none; /* Убираем стандартный стиль для WebKit */
+    width: 100%; /* Ширина ползунка */
+    height: 8px; /* Высота трека */
+    background: white; /* Цвет для правой части трека */
+    border-radius: 5px; /* Закругление трека */
+    position: relative;
+}
+
+#sugarRange:hover {
+    opacity: 1; /* Ползунок становится непрозрачным при наведении */
+}
+
+/* Стили для левой части трека ползунка (для WebKit браузеров) */
+#sugarRange::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(to right, #d2691e 0%, #d2691e var(--val), white var(--val), white 100%);
+    border-radius: 5px;
+}
+
+/* Стили для бегунка ползунка (WebKit) */
+#sugarRange::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Убираем стандартный стиль для WebKit */
+    appearance: none;
+    width: 15px; /* Ширина бегунка */
+    height: 15px; /* Высота бегунка */
+    background: #8b4513; /* Темно-коричневый цвет бегунка */
+    border-radius: 50%; /* Закругленный бегунок */
+    cursor: pointer; /* Изменение курсора при наведении */
+    position: relative;
+	top: -3.5px; /* Выравнивание по центру трека */
+}
+
+/* Стили для бегунка ползунка (для Firefox) */
+#sugarRange::-moz-range-thumb {
+    width: 15px; /* Ширина бегунка */
+    height: 15px; /* Высота бегунка */
+    background: #8b4513; /* Темно-коричневый цвет бегунка */
+    border-radius: 50%; /* Закругленный бегунок */
+    cursor: pointer; /* Изменение курсора при наведении */
+}
+
+/* Для Firefox, чтобы левая часть была коричневой */
+#sugarRange::-moz-range-progress {
+    background-color: #d2691e; /* Коричневый цвет для заполненной части трека */
+    height: 8px;
+    border-radius: 5px;
+}
+
+/* Для Internet Explorer и Edge */
+#sugarRange::-ms-fill-lower {
+    background-color: #d2691e; /* Коричневый цвет для заполненной части трека */
+    border-radius: 5px;
+}
+
+#sugarRange::-ms-fill-upper {
+    background-color: white; /* Белый цвет для незаполненной части трека */
+    border-radius: 5px;
+}
