@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GLOUSHKOV COFFEE</title>
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" href="css/burger.css">
+	<link rel="stylesheet" href="css/cart.css">
+	<link rel="stylesheet" href="css/form.css">
+	<link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/x-icon" href="image/iconka.png">
+</head>
+<body class="">
+    
+    <div class="container">
+        <header>
+            <h1>GLOUSHKOV <span class="colortext">COFFEE</span></h1>
+			<nav class="nav">
+                <ul class="menu">
+                    <li><a href="#coffee">Кофе</a></li>
+                    <li><a href="#tea">Чай</a></li>
+					<li><a href="#necoffee">Не кофе</a></li>
+					<li><a href="#avtorskoe">Авторское</a></li>
+                    <li><a href="#cocktails">Коктейли</a></li>
+                </ul>
+            </nav>
+			<!-- Иконка бургерменю -->
+            <div class="burger">
+                <span></span>
+            </div>
+            <div class="shopping">
+            <img src="image/shopping.svg">
+			<span class="quantity">0</span>
+                <div class="shopping-info">
+                <p>Корзина</p>                
+                </div>
+            </div>
+        </header>
+
+        <section id="coffee">
+            <h2>Кофе</h2>
+			<p><i>Попробуйте наш кофе!</i></p>
+            <div class="coffee-list">
+            <!-- Ваш товарный список здесь -->
+            </div>
+		</section>
+			
+		<section id="tea">
+            <h2>Чай</h2>
+			<p><i>Попробуйте наш чай!</i></p>
+            <div class="tea-list">
+            <!-- Ваш товарный список здесь -->
+            </div>
+		</section>
+		
+		<section id="necoffee">
+            <h2>Не кофе</h2>
+			<p><i>Попробуйте наш не кофе!</i></p>
+            <div class="necoffee-list">
+            <!-- Ваш товарный список здесь -->
+            </div>
+		</section>
+		
+		<section id="avtorskoe">
+            <h2>Авторское</h2>
+			<p><i>Попробуйте наши автроские напики!</i></p>
+            <div class="avtorskoe-list">
+            <!-- Ваш товарный список здесь -->
+            </div>
+		</section>
+		
+		<section id="cocktails">
+            <h2>Коктейли</h2>
+			<p><i>Попробуйте наши коктейли!</i></p>
+            <div class="cocktails-list">
+            <!-- Ваш товарный список здесь -->
+            </div>
+		</section>
+    </div>
+
+    <div class="card">
+        <h1>Корзина</h1>		
+        <ul class="listCard">
+            <!-- Содержимое корзины здесь -->
+        </ul>
+        <div class="checkOut">
+            <div class="total">0</div>
+            <div class="closeShopping">Закрыть</div>
+        </div>
+    </div>
+	
+	<!-- Контейнер с выбором добавок (скрыт по умолчанию) -->
+    <div class="container2" style="display: none;">
+        <h1>Создайте ваш напиток!</h1>
+        
+        <!-- Выбор сахара -->
+        <div class="section">
+            <h2>Сколько сахара?</h2>
+            <input type="range" id="sugarRange" min="0" max="5" step="1" value="0">
+            <span id="sugarAmount">0 ложки</span>
+        </div>
+
+        <!-- Выбор молока -->
+        <div class="section">
+            <h2>Выберите молоко:</h2>
+            <select id="milkSelect">
+                <option value="Не выбрано">Не выбрано</option>
+                <option value="Коровье молоко +35р">Коровье молоко +35р</option>
+                <option value="Соевое молоко +40р">Соевое молоко +40р</option>
+                <option value="Миндальное молоко +45р">Миндальное молоко +45р</option>
+                <option value="Кокосовое молоко +50р">Кокосовое молоко +50р</option>
+                <option value="Банановое молоко +55р">Банановое молоко +55р</option>
+                <option value="Овсяное молоко +37р">Овсяное молоко +37р</option>
+                <option value="Безлактозное молоко +42р">Безлактозное молоко +42р</option>
+            </select>
+        </div>
+        
+        <!-- Добавки -->
+        <div class="section">
+            <details>
+                <summary>Выберите добавки</summary>
+                <div class="toppings-scroll-container">
+                    <div class="checkbox-container">
+                        <label><input type="checkbox" name="topping" value="Корица +15р"> Корица +15р</label><br>
+                        <label><input type="checkbox" name="topping" value="Взбитые сливки +20р"> Взбитые сливки +20р</label><br>
+                        <label><input type="checkbox" name="topping" value="Маршмеллоу +30р"> Маршмеллоу +30р</label><br>
+                        <label><input type="checkbox" name="topping" value="Шоколадная крошка +25р"> Шоколадная крошка +25р</label><br>
+                        <label><input type="checkbox" name="topping" value="Миндаль +40р"> Миндаль +40р</label><br>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <!-- Список сиропов с чекбоксами -->
+        <div class="section">
+            <details>
+                <summary>Выберите сиропы</summary>
+                <div class="syrup-scroll-container">
+                    <div class="checkbox-container">
+                        <label><input type="checkbox" name="syrup" value="Ваниль +45р"> Ваниль +45р</label><br>
+                        <label><input type="checkbox" name="syrup" value="Карамель +40р"> Карамель +40р</label><br>
+                        <label><input type="checkbox" name="syrup" value="Лесной орех +45р"> Лесной орех +45р</label><br>
+                        <label><input type="checkbox" name="syrup" value="Шоколад +40р"> Шоколад +40р</label><br>
+                        <label><input type="checkbox" name="syrup" value="Кленовый сироп +30р"> Кленовый сироп +30р</label><br>
+                        <label><input type="checkbox" name="syrup" value="Мятный сироп +40р"> Мятный сироп +40р</label><br>
+                        <label><input type="checkbox" name="syrup" value="Имбирный сироп +35р"> Имбирный сироп +35р</label><br>
+                        <label><input type="checkbox" name="syrup" value="Лимонный сироп +42р"> Лимонный сироп +42р</label><br>
+                    </div>
+                </div>
+            </details>
+        </div>
+
+        <!-- Кнопка отправки -->
+        <button class="extra-btn" id="submitBtn">Ok</button>
+    </div>
+
+    <!-- Модальное окно -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <p id="modal-description"></p>
+        </div>
+    </div>
+
+	
+	<div class="hop" style="display: none;">
+	    <input type="hidden" id="hiddenSyrups" value="">
+        <input type="hidden" id="hiddenToppings" value="">
+        <input type="hidden" id="hiddenSugar" value="">
+        <input type="hidden" id="hiddenMilk" value="">
+        <input type="hidden" id="hiddenTotalExtraCost" value="">
+    </div>
+	
+	<!-- Результат -->
+    <div id="result" class="section" style="display: none;"></div>
+	
+	<!-- Добавленный HTML код для всплывающей формы -->
+    <div class="overlay" id="overlay">
+        <form id="form" class="hidden-form">
+            <label> <center>ФИО <span>*</span></center> </label>
+            <input type="text" placeholder="Иван Иванович Иванов" id="user_name">
+            <label> <center>Номер телефона <span>*</span></center> </label>
+            <input type="tel" maxlength="12" placeholder="+7 (999) 999-99-99" class="phone_mask" id="user_phone">
+	        <label> <center>Пожелание к бариста</center> </label>
+            <input type="text" placeholder="Комментарий бариста" id="user_koment">
+            <div id="error"></div>
+            <button class="btn0" id="order">Оформить</button>
+        </form>
+	</div>
+	
+	<script src="js/burger.js"></script>
+	<script src="js/dop.js"></script>
+    <script src="js/cart.js"></script>
+	<script src="js/form.js"></script>
+	<script src="js/menu_coffee.js"></script>
+	<script src="js/menu_tea.js"></script>
+	<script src="js/menu_necoffee.js"></script>
+	<script src="js/menu_avtorskoe.js"></script>
+	<script src="js/menu_cocktails.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery.maskedinput@1.4.1/src/jquery.maskedinput.js" type="text/javascript"></script>
+	<script src="js/jquery.maskedinput.min.js"></script>
+	<script src="https://telegram.org/js/telegram-web-app.js"></script>
+	<script>
+	$(".phone_mask").mask("+7(999)999-99-99");
+
+$(document).ready(function () {
+    let tg = window.Telegram.WebApp;
+    let order = document.getElementById("order");
+
+    order.addEventListener("click", function () {
+        $("#error").text('');
+        var name = $("#user_name").val();
+        var email = $("#user_email").val();
+        var phone = $("#user_phone").val();
+        var koment = $("#user_koment").val();
+
+// Собираем данные из корзины
+        let cartData = [];
+        Object.keys(listCards).forEach((productKey) => {
+            const value = listCards[productKey];
+            if (value != null) {
+                cartData.push({
+                    Кофе: value.name,
+                    Цена: value.price,
+                    Объём: value.selectedVolume,
+                    Количество: value.quantity
+                });
+            }
+        });
+
+        var data = {
+            name: name,
+            email: email,
+            phone: phone,
+            koment: koment,
+            items: cartData,
+            total: getTotalPrice() // Предполагается, что getTotalPrice() возвращает общую сумму заказа
+        };
+
+        tg.sendData(JSON.stringify(data));
+        tg.close();
+    });
+});
+
+let tg = window.Telegram.WebApp;
+tg.expand();
+
+// Функция для получения общей суммы заказа
+function getTotalPrice() {
+    let totalSum = 0;
+    Object.keys(listCards).forEach((productKey) => {
+        const value = listCards[productKey];
+        if (value != null) {
+            totalSum += value.price;
+        }
+    });
+    return totalSum;
+}
+
+</script>
+</body>
+</html>
