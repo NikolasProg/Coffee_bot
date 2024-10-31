@@ -178,41 +178,35 @@ select {
 }
 
 @media (max-width: 768px) {
-    /* Корзина для мобильной версии */
-    .card {
-        position: fixed;
-        top: 0;
-        left: 0; /* Установите в 0, чтобы не было отступа слева */
-        width: 100vw;
-        height: 100vh;
-        background-color: #453E3B;
-        transition: 0.5s;
-        overflow-y: auto;
-        z-index: 101;
-        box-sizing: border-box;
-        margin: 0; /* Убираем внешние отступы */
-        padding: 0; /* Убираем внутренние отступы */
+    /* Сдвигаем контейнер корзины влево */
+    .shopping {
+        margin-right: auto; /* Сдвигаем корзину влево */
+        padding-left: 10px; /* Отступ слева для выравнивания */
     }
 
-    .active .card {
-        left: 0;
-        width: 100vw;
+    /* Сдвигаем текст и иконку "Корзина" влево */
+    .shopping-info p {
+        text-align: left;
+        margin-left: 5px; /* Дополнительный отступ для текста */
     }
 
-    .active .container {
-        transform: none !important;
+    /* Уменьшение отступа для счетчика корзины */
+    .shopping .quantity {
+        right: -2px; /* Регулируйте, чтобы было ближе к иконке корзины */
     }
-
-    /* Остальные стили */
+	
+    /* Общий размер текста на странице */
     body {
         font-size: 18px;
     }
 
+    /* Меньший размер заголовка в шапке */
     header h1 {
         font-size: 1.2em; /* Уменьшение размера заголовка */
         margin-left: 5px;
     }
     
+    /* Паддинги для заголовков и абзацев */
     h2 {
         padding-left: 30px;
     }
@@ -221,18 +215,23 @@ select {
         margin-left: 20px;
     }
 
-    .shopping {
-        margin-right: auto; /* Сдвигаем корзину влево */
-        padding-left: 10px; /* Отступ слева для выравнивания */
+    /* Изображение корзины и счётчик товаров */
+    header .shopping img {
+        width: 40px;
+        margin-right: 20px;
     }
-
-    .shopping-info p {
-        text-align: left;
-        margin-left: 5px; /* Дополнительный отступ для текста */
-    }
-
-    .shopping .quantity {
-        right: -2px; /* Регулируйте, чтобы было ближе к иконке корзины */
+    
+    header .shopping span {
+        background: red;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fff;
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        padding: 3px 8px;
     }
 
     /* Список товаров с уменьшенными промежутками */
@@ -247,6 +246,7 @@ select {
         padding: 0 10px; /* Отступы по бокам для списка товаров */
     }
 
+    /* Карточки товаров по две на строку с отступами */
     .coffee-list .item, 
     .tea-list .item, 
     .necoffee-list .item, 
@@ -274,5 +274,27 @@ select {
         overflow: hidden; /* Скрывает переполненный текст */
         white-space: nowrap; /* Запрещает перенос строки */
         text-overflow: ellipsis; /* Добавляет многоточие для длинного текста */
+    }
+
+    /* Корзина для мобильной версии */
+    .card {
+        position: fixed;
+        top: 0;
+        width: 100vw;
+        background-color: #453E3B;
+        height: 100vh;
+        transition: 0.5s;
+        overflow-y: auto;
+        z-index: 101;
+        box-sizing: border-box;
+    }
+
+    .active .card {
+        left: 0;
+        width: 100vw;
+    }
+
+    .active .container {
+        transform: none !important;
     }
 }
