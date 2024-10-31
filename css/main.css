@@ -178,27 +178,49 @@ select {
 }
 
 @media (max-width: 768px) {
+    /* Сдвигаем контейнер корзины влево */
+    .shopping {
+        margin-right: auto; /* Сдвигаем корзину влево */
+        padding-left: 10px; /* Отступ слева для выравнивания */
+    }
+
+    /* Сдвигаем текст и иконку "Корзина" влево */
+    .shopping-info p {
+        text-align: left;
+        margin-left: 5px; /* Дополнительный отступ для текста */
+    }
+
+    /* Уменьшение отступа для счетчика корзины */
+    .shopping .quantity {
+        right: -2px; /* Регулируйте, чтобы было ближе к иконке корзины */
+    }
+	
+    /* Общий размер текста на странице */
     body {
         font-size: 18px;
     }
 
-    header .h1 {
-        margin-left: 20px;
+    /* Меньший размер заголовка в шапке */
+    header h1 {
+        font-size: 1.2em; /* Уменьшение размера заголовка */
+        margin-left: 5px;
     }
-	
-	h2 {
+    
+    /* Паддинги для заголовков и абзацев */
+    h2 {
         padding-left: 30px;
     }
-	
-	p {
+    
+    p {
         margin-left: 20px;
     }
 
+    /* Изображение корзины и счётчик товаров */
     header .shopping img {
         width: 40px;
         margin-right: 20px;
     }
-
+    
     header .shopping span {
         background: red;
         border-radius: 50%;
@@ -210,17 +232,11 @@ select {
         top: -8px;
         right: -8px;
         padding: 3px 8px;
-        margin-right: 10px;
     }
 
-    header .shopping p {
-        margin: 0;
-        display: inline-block;
-        margin-left: -20px;
-    }
-
+    /* Список товаров с уменьшенными промежутками */
     .list {
-        gap: 0;
+        gap: 10px; /* Уменьшение промежутка между карточками */
         margin-top: 10px;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -230,23 +246,25 @@ select {
         padding: 0 10px; /* Отступы по бокам для списка товаров */
     }
 
-    /* Карточки товаров по две на строку с отступами от краёв экрана */
-    .coffee-list .item, .tea-list .item, .necoffee-list .item, .avtorskoe-list .item, .cocktails-list .item {
-        width: calc(50% - 20px); /* Две карточки на строку с учетом отступов */
-        margin: 5px; /* Отступы между карточками */
+    /* Карточки товаров по две на строку с отступами */
+    .coffee-list .item, 
+    .tea-list .item, 
+    .necoffee-list .item, 
+    .avtorskoe-list .item, 
+    .cocktails-list .item {
+        width: calc(50% - 10px); /* Две карточки на строку с уменьшенными отступами */
+        margin: 5px 0; /* Отступы между карточками */
         box-sizing: border-box;
     }
 
-    .list .item .price {
-        margin: 10px;
-        flex-grow: 1;
+    /* Уменьшенная кнопка "Дополнительно" */
+    .extra-btn {
+        font-size: 14px; /* Уменьшение размера кнопки */
+        padding: 5px 8px;
     }
-	
-	.hide-header {
-        top: -100px;
-    }
-	
-	.card {
+
+    /* Корзина для мобильной версии */
+    .card {
         position: fixed;
         top: 0;
         width: 100vw;
