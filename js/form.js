@@ -5,6 +5,7 @@ const totalDiv = document.querySelector('.total');
 
 // Показать форму при клике на totalDiv
 totalDiv.addEventListener('click', () => {
+    body.classList.remove('active');
     overlay.style.display = 'block';
     form.style.display = 'block';
     setTimeout(() => {
