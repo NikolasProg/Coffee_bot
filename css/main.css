@@ -257,10 +257,23 @@ select {
         box-sizing: border-box;
     }
 
-    /* Уменьшенная кнопка "Дополнительно" */
     .extra-btn {
-        font-size: 14px; /* Уменьшение размера кнопки */
-        padding: 5px 8px;
+        background-color: gray; /* Темный цвет кнопки */
+        color: white;
+        padding: 4px 10px; /* Уменьшенные внутренние отступы */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        display: block;
+        margin: 5px auto; /* Центрирование кнопки */
+        font-size: 12px; /* Уменьшенный размер шрифта */
+        width: 90%; /* Задайте ширину кнопки относительно родителя */
+        box-sizing: border-box; /* Учитывать отступы в ширине */
+        text-align: center; /* Центрирование текста */
+        transition: background-color 0.3s ease;
+        overflow: hidden; /* Скрывает переполненный текст */
+        white-space: nowrap; /* Запрещает перенос строки */
+        text-overflow: ellipsis; /* Добавляет многоточие для длинного текста */
     }
 
     /* Корзина для мобильной версии */
