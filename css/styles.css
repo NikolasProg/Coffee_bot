@@ -23,6 +23,10 @@
     letter-spacing: 1px;
 }
 
+.container2 h1 {
+    margin-left: 20px; /* Отступ справа */
+}
+
 /* Секции */
 .section {
     margin-bottom: 25px;
@@ -226,13 +230,18 @@ summary {
     background: #7a3e00; /* Темнее коричневый цвет при наведении */
 }
 		
+/* Контейнер для ползунка */
+.sugar-container {
+    padding-right: 30px; /* Отступ справа для ползунка */
+}
+
 /* Стили для ползунка сахара */
 #sugarRange {
     -webkit-appearance: none; /* Убираем стандартный стиль для WebKit */
-    width: 100%; /* Ширина ползунка */
-    height: 8px; /* Высота трека */
+    width: calc(100% - 20px); /* Уменьшаем ширину на отступ */
+    height: 6px; /* Высота трека */
     background: white; /* Цвет для правой части трека */
-    border-radius: 5px; /* Закругление трека */
+    border-radius: 15px; /* Закругление трека */
     position: relative;
 }
 
@@ -258,7 +267,7 @@ summary {
     border-radius: 50%; /* Закругленный бегунок */
     cursor: pointer; /* Изменение курсора при наведении */
     position: relative;
-	top: -3.5px; /* Выравнивание по центру трека */
+    top: -3.5px; /* Выравнивание по центру трека */
 }
 
 /* Стили для бегунка ползунка (для Firefox) */
@@ -287,3 +296,4 @@ summary {
     background-color: white; /* Белый цвет для незаполненной части трека */
     border-radius: 5px;
 }
+
