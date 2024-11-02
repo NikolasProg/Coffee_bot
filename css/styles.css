@@ -89,18 +89,13 @@ summary {
 
 /* Стили кнопок */
 .extra-btn {
-    background-color: gray; /* Темный цвет кнопки */
-    color: white;
-    padding: 6px 25px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    display: block;
-    margin-left: auto;
+    background-color: #AB9C75; /* Темный цвет кнопки */
+    color: #fff;
+	font-size: 1.2rem;
+    width: 100%;
+    padding: 10px;
 	margin-bottom: 10px;
-    margin-right: auto;
-    transition: background-color 0.3s ease;
-    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 .extra-btn:hover {
