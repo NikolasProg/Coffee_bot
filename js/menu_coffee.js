@@ -120,7 +120,7 @@ productsCoffee.forEach((product) => {
 
         <!-- Кнопка для добавления товара в корзину -->
         <button class="extra-btn" onclick="butt('${product.id}')">Добавки</button>
-        <button class="dobavit" onclick="addToCard('${product.id}')">Добавить в корзину</button>`;
+        <button class="dobavit" onclick="addToCard('${product.id}')">В корзину</button>`;
     
     // Добавляем сформированную карточку товара в coffeeList
     coffeeList.appendChild(newDiv);
