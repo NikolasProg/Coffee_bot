@@ -144,6 +144,22 @@ select {
     box-shadow: 0 10px 10px #757676;
     letter-spacing: 1px;
     margin-bottom: 20px;
+    display: flex;
+    flex-direction: column; /* Вертикальное выравнивание */
+    justify-content: space-between; /* Равномерное распределение */
+}
+
+/* Контейнер для заголовка и цены */
+.coffee-list .item .title-price-container,
+.tea-list .item .title-price-container,
+.necoffee-list .item .title-price-container,
+.avtorskoe-list .item .title-price-container,
+.cocktails-list .item .title-price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Центрирование по горизонтали */
+    justify-content: flex-end; /* Выравнивание по нижнему краю */
+    flex-grow: 1; /* Заполнение оставшегося пространства */
 }
 
 /* Изображение товара */
@@ -157,17 +173,19 @@ select {
 /* Заголовок товара */
 .coffee-list .item .title, .tea-list .item .title, .necoffee-list .item .title, .avtorskoe-list .item .title, .cocktails-list .item .title {
     font-weight: 600;
+	font-size: 1.2rem;
 }
 
 /* Цена товара */
 .coffee-list .item .price, .tea-list .item .price, .necoffee-list .item .price, .avtorskoe-list .item .price, .cocktails-list .item .price {
-    margin: 10px;
+    margin: 10px 0; /* Убираем боковые отступы */
 }
 
 /* Кнопка для добавления товара в корзину */
 .coffee-list .item .dobavit, .tea-list .item .dobavit, .necoffee-list .item .dobavit, .avtorskoe-list .item .dobavit, .cocktails-list .item .dobavit {
     background-color: #1C1F25;
     color: #fff;
+	font-size: 1.2rem;
     width: 100%;
     padding: 10px;
     transition: background-color 0.3s;
@@ -176,6 +194,7 @@ select {
 .coffee-list .item .dobavit:hover, .tea-list .item .dobavit:hover, .necoffee-list .item .dobavit:hover, .avtorskoe-list .item .dobavit:hover, .cocktails-list .item .dobavit:hover {
     background-color: #E8BC0E;
 }
+
 
 @media (max-width: 768px) {
 	.container2 {
@@ -276,25 +295,6 @@ select {
         width: calc(50% - 10px); /* Две карточки на строку с уменьшенными отступами */
         margin: 5px 0; /* Отступы между карточками */
         box-sizing: border-box;
-    }
-
-    .extra-btn {
-        background-color: gray; /* Темный цвет кнопки */
-        color: white;
-        padding: 4px 10px; /* Уменьшенные внутренние отступы */
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        display: block;
-        margin: 5px auto; /* Центрирование кнопки */
-        font-size: 12px; /* Уменьшенный размер шрифта */
-        width: 90%; /* Задайте ширину кнопки относительно родителя */
-        box-sizing: border-box; /* Учитывать отступы в ширине */
-        text-align: center; /* Центрирование текста */
-        transition: background-color 0.3s ease;
-        overflow: hidden; /* Скрывает переполненный текст */
-        white-space: nowrap; /* Запрещает перенос строки */
-        text-overflow: ellipsis; /* Добавляет многоточие для длинного текста */
     }
 
     /* Корзина для мобильной версии */
