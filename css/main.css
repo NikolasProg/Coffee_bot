@@ -197,6 +197,17 @@ select {
 
 
 @media (max-width: 768px) {
+	header h1 {
+        display: block;
+        font-size: 1.5rem; /* Регулируйте размер шрифта при необходимости */
+        line-height: 1.2;
+        margin: 0 auto;
+    }
+
+    header h1 span.colortext {
+        display: block; /* Это заставит "COFFEE" перейти на новую строку */
+    }
+	
 	.container2 {
         position: fixed;
         top: 0;
@@ -238,12 +249,6 @@ select {
     /* Общий размер текста на странице */
     body {
         font-size: 18px;
-    }
-
-    /* Меньший размер заголовка в шапке */
-    header h1 {
-        font-size: 1.2em; /* Уменьшение размера заголовка */
-        margin-left: 5px;
     }
     
     /* Паддинги для заголовков и абзацев */
@@ -319,5 +324,3 @@ select {
         transform: none !important;
     }
 }
-
-
