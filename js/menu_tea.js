@@ -5,7 +5,7 @@ let teaList = document.querySelector('.tea-list');
 let productsTea = [
     {
         id: 't001',
-        name: 'ЧЁРНЫЙ',
+        name: 'Чёрный',
         image: '7t.png',
         prices: {
             350: 80,
@@ -15,7 +15,7 @@ let productsTea = [
     },
     {
         id: 't002',
-        name: 'ЗЕЛЁНЫЙ',
+        name: 'Зелёный',
         image: '8t.png',
         prices: {
             350: 80,
@@ -25,7 +25,7 @@ let productsTea = [
     },
     {
         id: 't003',
-        name: 'ПУЭР',
+        name: 'Пуэр',
         image: '1t.png',
         prices: {
             350: 160,
@@ -35,7 +35,7 @@ let productsTea = [
     },
     {
         id: 't004',
-        name: 'ОБЛЕПИХОВЫЙ',
+        name: 'Облепиховый',
         image: '2t.png',
         prices: {
             350: 160,
@@ -45,7 +45,7 @@ let productsTea = [
     },
     {
         id: 't005',
-        name: 'ТАЁЖНЫЙ',
+        name: 'Таёжный',
         image: '3t.png',
         prices: {
             350: 160,
@@ -55,7 +55,7 @@ let productsTea = [
     },
     {
         id: 't006',
-        name: 'МЕДОВАЯ ГАБА',
+        name: 'Медовая габа',
         image: '4t.png',
         prices: {
             350: 160,
@@ -65,7 +65,7 @@ let productsTea = [
     },
     {
         id: 't007',
-        name: 'МОЛОЧНЫЙ УЛУН',
+        name: 'Молочный улун',
         image: '5t.png',
         prices: {
             350: 160,
@@ -75,7 +75,7 @@ let productsTea = [
     },
     {
         id: 't008',
-        name: 'ЗЕЛЁНЫЙ ЖЕНЬ-ШЕНЬ',
+        name: 'Зелёный Жень-Шень',
         image: '6t.png',
         prices: {
             350: 160,
@@ -105,7 +105,7 @@ productsTea.forEach((product) => {
         </select>
 
         <!-- Кнопка для добавления товара в корзину -->
-        <button class="dobavit" onclick="addToCard('${product.id}')">Добавить в корзину</button>`;
+        <button class="dobavit" onclick="addToCard('${product.id}')">В корзину</button>`;
     
     // Добавляем сформированную карточку товара в teaList
     teaList.appendChild(newDiv);
