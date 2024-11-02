@@ -5,7 +5,7 @@ let cocktailsList = document.querySelector('.cocktails-list');
 let productsCocktails = [
     {
         id: 'k001',
-        name: 'КОКТЕЙЛЬ',
+        name: 'Коктейль',
         image: '1k.png',
         prices: {
             350: 80,
@@ -35,8 +35,8 @@ productsCocktails.forEach((product) => {
         </select>
 
         <!-- Кнопка для добавления товара в корзину -->
-		<button class="extra-btn" onclick="butt('${product.id}')">Дополнительно</button>
-        <button class="dobavit" onclick="addToCard('${product.id}')">Добавить в корзину</button>`;
+		<button class="extra-btn" onclick="butt('${product.id}')">Добавки</button>
+        <button class="dobavit" onclick="addToCard('${product.id}')">В корзину</button>`;
     
     // Добавляем сформированную карточку товара в cocktailsList
     cocktailsList.appendChild(newDiv);
