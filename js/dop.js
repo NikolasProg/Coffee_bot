@@ -1,3 +1,4 @@
+let currentProductKey = null; // Глобальная переменная для хранения ключа товара
 const sugarRange = document.getElementById('sugarRange');
 
 function updateSliderBackground() {
@@ -8,7 +9,10 @@ function updateSliderBackground() {
 sugarRange.addEventListener('input', updateSliderBackground);
 updateSliderBackground(); // Инициализация
 
+// Функция для отображения контейнера с добавками и сохранения ключа товара
 function butt(key) {
+    currentProductKey = key; // Сохраняем ключ товара
+    console.log("Текущий ключ товара:", currentProductKey); // Проверка ключа товара
     const container = document.querySelector('.container2'); // Контейнер с дополнительными опциями
     
     // Показать или скрыть контейнер
@@ -18,8 +22,6 @@ function butt(key) {
         container.style.display = 'none';
     }
 }
-
-
 
 document.getElementById('sugarRange').addEventListener('input', function () {
     let sugarAmount = document.getElementById('sugarRange').value;
@@ -66,6 +68,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Закрываем контейнер
         document.querySelector('.container2').style.display = 'none';
+
+        // Проверяем, что ключ товара сохранён и добавляем товар в корзину
+        if (currentProductKey !== null) {
+            console.log("Добавление товара в корзину с ключом:", currentProductKey); // Проверка перед добавлением
+            addToCart(currentProductKey); // Вызываем функцию добавления в корзину
+        } else {
+            console.error("Ключ товара не найден.");
+        }
 
         // Сбрасываем форму
         resetForm();
