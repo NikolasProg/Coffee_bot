@@ -5,7 +5,7 @@ let coffeeList = document.querySelector('.coffee-list');
 let productsCoffee = [
     {
         id: 'c001',
-        name: 'Эсперссо',
+        name: 'Эспрессо',
         image: '1.png',
         prices: {
             250: 120,
@@ -14,7 +14,7 @@ let productsCoffee = [
     },
     {
         id: 'c002',
-        name: 'Амерекано',
+        name: 'Американо',
         image: '2.png',
         prices: {
             250: 110,
