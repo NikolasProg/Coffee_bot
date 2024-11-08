@@ -1,0 +1,57 @@
+$(".phone_mask").mask("+7(999)999-99-99");
+
+$(document).ready(function () {
+    let tg = window.Telegram.WebApp;
+    let order = document.getElementById("order");
+
+    order.addEventListener("click", function () {
+        $("#error").text('');
+        var name = $("#user_name").val();
+        var phone = $("#user_phone").val();
+        var koment = $("#user_koment").val();
+
+// Собираем данные из корзины
+        let cartData = [];
+        Object.keys(listCards).forEach((productKey) => {
+            const value = listCards[productKey];
+            if (value != null) {
+                cartData.push({
+                    Кофе: value.name,
+                    Цена: value.price,
+                    Объём: value.selectedVolume,
+                    Количество: value.quantity,
+					Сахар: value.sugar,
+					Добавки: value.toppings.join(', '),
+					Молоко: value.milk,
+					Сиропы: value.syrups.join(', ')
+                });
+            }
+        });
+
+        var data = {
+            name: name,
+            phone: phone,
+            koment: koment,
+            items: cartData,
+            total: getTotalPrice() // Предполагается, что getTotalPrice() возвращает общую сумму заказа
+        };
+
+        tg.sendData(JSON.stringify(data));
+        tg.close();
+    });
+});
+
+let tg = window.Telegram.WebApp;
+tg.expand();
+
+// Функция для получения общей суммы заказа
+function getTotalPrice() {
+    let totalSum = 0;
+    Object.keys(listCards).forEach((productKey) => {
+        const value = listCards[productKey];
+        if (value != null) {
+            totalSum += value.price;
+        }
+    });
+    return totalSum;
+}
